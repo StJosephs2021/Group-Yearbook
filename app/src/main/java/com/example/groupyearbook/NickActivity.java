@@ -34,7 +34,6 @@ public class NickActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-
     public void buttonClick1 (View view){
         Bitmap b = BitmapFactory.decodeResource(getResources(), R.drawable.picture1);
         Intent share = new Intent(Intent.ACTION_SEND);
