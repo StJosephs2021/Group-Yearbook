@@ -5,7 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
-
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Intent;
@@ -13,10 +14,14 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.view.View.OnClickListener;
 
 public class MainActivity extends AppCompatActivity {
+
+    private WebView webView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
             NotificationChannel channel = new NotificationChannel("first", "Pablowork", NotificationManager.IMPORTANCE_HIGH);
             NotificationManager manager = getSystemService(NotificationManager.class);
             manager.createNotificationChannel(channel);
+            webView = (WebView) findViewById(R.id.webview);
+            webView.setWebViewClient(new WebViewClient());
+            webView.loadUrl("https://www.google.com");
         }
     }
 
@@ -62,4 +70,5 @@ public class MainActivity extends AppCompatActivity {
         NotificationManagerCompat managerCompat = NotificationManagerCompat.from(this);
         managerCompat.notify(1, builder.build());
     }
+
 }
