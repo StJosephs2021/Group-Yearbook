@@ -102,5 +102,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
+        android:onClick="buttonClick1"
+        android:text="Share"
+        app:backgroundTint="#28C4D8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" /><![CDATA[
+
+
     >>>>>>> c501d62... Initial commit
+]]>
 </androidx.constraintlayout.widget.ConstraintLayout>
