@@ -23,29 +23,38 @@ import java.util.ArrayList;
 
 public class NickActivity extends AppCompatActivity {
 
+    Button buttonClick, buttonClick1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nickactivity);
-    }
+        buttonClick = (Button) findViewById(R.id.button1);
+        buttonClick1 = (Button) findViewById(R.id.button2);
 
-    public void buttonClick (View view) {
-        Intent i = new Intent(getApplicationContext(), PablosActivity.class);
-        startActivity(i);
-    }
+        buttonClick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), PablosActivity.class);
+                startActivity(i);
+            }
+        });
 
-    public void buttonClick1 (View view){
-        Bitmap b = BitmapFactory.decodeResource(getResources(), R.drawable.picture1);
+    buttonClick1.setOnClickListener(new View.OnClickListener() {
+        @Override
+      public void onClick(View view) {
+       Bitmap b = BitmapFactory.decodeResource(getResources(), R.drawable.picture1);
         Intent share = new Intent(Intent.ACTION_SEND);
         share.setType("image/jpeg");
         ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-        b.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
-        String path = MediaStore.Images.Media.insertImage(getContentResolver(),
-                b, "Title", null);
-        Uri imageUri = Uri.parse(path);
-        share.putExtra(Intent.EXTRA_STREAM, imageUri);
-        startActivity(Intent.createChooser(share, "Select"));
-
+       b.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
+       String path = MediaStore.Images.Media.insertImage(getContentResolver(), b,"Title", null);
+       Uri imageUri = Uri.parse(path);
+       share.putExtra(Intent.EXTRA_STREAM, imageUri);
+       startActivity(Intent.createChooser(share, "Select"));
+          }
+       });
+    }
 /*
         Intent shareIntent = new Intent();
     Uri imageUri = Uri.parse("android.resource://your.package/drawable/picture1.png");
@@ -55,5 +64,5 @@ public class NickActivity extends AppCompatActivity {
     shareIntent.setType("image/png");
     startActivity(Intent.createChooser(shareIntent, getResources().getText(R.string.app_name)));
 */
-    }
+
 }

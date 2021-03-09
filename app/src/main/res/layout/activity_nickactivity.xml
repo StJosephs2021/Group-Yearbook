@@ -43,7 +43,7 @@
         android:layout_marginRight="163dp"
         android:layout_marginBottom="444dp"
         android:text="Nicholas Cordeiro"
-        android:textSize="24sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.431"
@@ -78,7 +78,6 @@
             android:id="@+id/button1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="buttonClick"
             android:text="NEXT"
             app:backgroundTint="#47B6FF" />
 
@@ -103,11 +102,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="36dp"
-        android:onClick="buttonClick1"
         android:text="Share"
         app:backgroundTint="#28C4D8"
         app:layout_constraintBottom_toBottomOf="parent"
